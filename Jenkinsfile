@@ -90,7 +90,7 @@ pipeline {
         }
         stage('Push Docker Image') {
             steps {
-                withDockerRegistry(credentialsId: 'docker-hub-credentials', url: "http://kodekloud-hub:5000") {
+                withDockerRegistry(credentialsId: 'docker-hub-credentials', url: "") {
                     sh  'docker push kodekloud-hub:5000/solar-system:$GIT_COMMIT'
                 }
             }
